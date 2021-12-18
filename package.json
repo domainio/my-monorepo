@@ -8,7 +8,9 @@
     "test": "nx test"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@nxrocks/nx-spring-boot": "^3.0.0"
+  },
   "devDependencies": {
     "@nrwl/cli": "13.2.3",
     "@nrwl/nx-cloud": "latest",
