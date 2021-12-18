@@ -36,6 +36,7 @@
     ]
   },
   "plugins": [
-    "@nxrocks/nx-spring-boot"
+    "@nxrocks/nx-spring-boot",
+    "@nxrs/cargo"
   ]
 }

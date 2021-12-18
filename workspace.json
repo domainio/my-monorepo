@@ -1,6 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "api-springboot": "apps/api-springboot"
+    "api-springboot": "apps/api-springboot",
+    "api_rust": "apps/api-rust"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
   }
 }
