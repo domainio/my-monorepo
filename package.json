@@ -27,6 +27,7 @@
     "@nrwl/nest": "^13.3.9",
     "@nrwl/node": "13.3.9",
     "@nrwl/nx-cloud": "latest",
+    "@nrwl/react": "^13.3.9",
     "@nrwl/tao": "13.2.3",
     "@nrwl/workspace": "13.2.3",
     "@nxrs/cargo": "^0.3.1",
