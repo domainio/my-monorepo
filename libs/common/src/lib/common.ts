@@ -1,3 +1,4 @@
-export function common(): string {
-    return 'common';
+export interface Item {
+    name: string;
+    amount: number;
 }

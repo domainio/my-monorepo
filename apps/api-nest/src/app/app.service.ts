@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-
+import { Item } from '@my-monorepo/common';
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    return ({ message: 'Welcome to api-nest!' });
+  getData(): Item {
+    return ({ name: 'Welcome to api-nest!', amount: 1 });
   }
 }
