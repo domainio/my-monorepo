@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api-graphql": "apps/api-graphql",
     "api-nest": "apps/api-nest",
     "api-springboot": "apps/api-springboot",
     "api_rust": "apps/api-rust",
