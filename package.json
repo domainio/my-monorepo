@@ -17,6 +17,8 @@
     "@nestjs/microservices": "^8.2.4",
     "@nestjs/platform-express": "^8.0.0",
     "@nxrocks/nx-spring-boot": "^3.0.0",
+    "amqp-connection-manager": "^3.7.0",
+    "amqplib": "^0.8.0",
     "apollo-server-express": "^3.5.0",
     "core-js": "^3.6.5",
     "graphql": "^15",
