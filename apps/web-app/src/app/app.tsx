@@ -3,6 +3,7 @@ import NxWelcome from "./nx-welcome";
 import { Item } from "@my-monorepo/common";
 import { Route, Link } from "react-router-dom";
 import { useEffect } from "react";
+import 'isomorphic-fetch';
 
 export function App() {
   useEffect(() => {

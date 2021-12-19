@@ -16,7 +16,7 @@ describe('AppController', () => {
   describe('getData', () => {
     it('should return "Welcome to api-nest!"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({message: 'Welcome to api-nest!'});
+      expect(appController.getData()).toEqual({ name: 'Welcome to api-nest!', amount: 1 });
     });
   });
 });
