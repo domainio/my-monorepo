@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@nrwl/cli": "13.2.3",
+    "@nrwl/nest": "^13.3.9",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.2.3",
     "@nrwl/workspace": "13.2.3",
