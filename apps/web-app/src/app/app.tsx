@@ -3,16 +3,29 @@ import NxWelcome from "./nx-welcome";
 import { Item } from "@my-monorepo/common";
 import { Route, Link } from "react-router-dom";
 import { useEffect } from "react";
-import 'isomorphic-fetch';
+import "isomorphic-fetch";
+import { useQuery, gql } from "@apollo/client";
+
+const gqlQuery = gql`
+  query getAllTodos {
+    todos {
+      id
+      name
+    }
+  }
+`;
 
 export function App() {
-  useEffect(() => {
-    fetch("/api")
-      .then((response) => response.json() as Promise<Item>)
-      .then((data) => console.log(data));
-  });
+  const { loading, error, data } = useQuery<{ todos: Item[] }, Item[]>(
+    gqlQuery
+  );
   return (
     <>
+      <ul>
+        {data?.todos?.map((todo) => (
+          <li>{todo.name}</li>
+        ))}
+      </ul>
       <NxWelcome title="web-app" />
       <div />
 
