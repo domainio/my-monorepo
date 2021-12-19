@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/nest"
   },
   "implicitDependencies": {
     "package.json": {
@@ -38,5 +38,6 @@
   "plugins": [
     "@nxrocks/nx-spring-boot",
     "@nxrs/cargo"
-  ]
+  ],
+  "defaultProject": "api-nest"
 }
