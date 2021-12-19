@@ -3,6 +3,8 @@
   "projects": {
     "api-nest": "apps/api-nest",
     "api-springboot": "apps/api-springboot",
-    "api_rust": "apps/api-rust"
+    "api_rust": "apps/api-rust",
+    "web-app": "apps/web-app",
+    "web-app-e2e": "apps/web-app-e2e"
   }
 }
