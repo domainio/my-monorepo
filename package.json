@@ -11,9 +11,13 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^9.1.2",
+    "@nestjs/microservices": "^8.2.4",
     "@nestjs/platform-express": "^8.0.0",
     "@nxrocks/nx-spring-boot": "^3.0.0",
+    "apollo-server-express": "^3.5.0",
     "core-js": "^3.6.5",
+    "graphql": "^15",
     "isomorphic-fetch": "^3.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
