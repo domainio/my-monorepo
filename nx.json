@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/nest"
   },
   "implicitDependencies": {
     "package.json": {
@@ -15,14 +15,15 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
           "lint",
           "test",
           "e2e"
-        ]
+        ],
+        "accessToken": "NjY5NjE5OTQtNjAwZi00NmY1LWJjNTYtMmZmNzVjMWMzODVifHJlYWQtd3JpdGU="
       }
     }
   },
@@ -33,5 +34,26 @@
         "projects": "dependencies"
       }
     ]
+  },
+  "plugins": [
+    "@nxrocks/nx-spring-boot",
+    "@nxrs/cargo"
+  ],
+  "defaultProject": "api-nest",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
   }
 }
