@@ -15,7 +15,7 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return "Welcome to api-nest!"', () => {
-      expect(service.getData()).toEqual({ name: 'Welcome to api-nest!', amount: 1 });
+      expect(service.getData()).toEqual({ name: 'Welcome to api-nest!', id: 1 });
     });
   });
 });
