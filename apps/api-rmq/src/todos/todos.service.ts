@@ -5,6 +5,7 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 @Injectable()
 export class TodosService {
   create(createTodoDto: CreateTodoDto) {
+    console.log('rmq create', createTodoDto);
     return 'This action adds a new todo';
   }
 

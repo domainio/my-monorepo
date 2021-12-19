@@ -1,15 +1,15 @@
 import { Controller } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 import { TodosService } from './todos.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
 
 @Controller()
 export class TodosController {
-  constructor(private readonly todosService: TodosService) {}
+  constructor(private readonly todosService: TodosService) { }
 
   @MessagePattern('createTodo')
-  create(@Payload() createTodoDto: CreateTodoDto) {
+  create(@Payload() createTodoDto: CreateTodoDto) {    
     return this.todosService.create(createTodoDto);
   }
 
