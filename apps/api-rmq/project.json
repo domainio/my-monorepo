@@ -1,0 +1,62 @@
+{
+  "root": "apps/api-rmq",
+  "sourceRoot": "apps/api-rmq/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/api-rmq",
+        "main": "apps/api-rmq/src/main.ts",
+        "tsConfig": "apps/api-rmq/tsconfig.app.json",
+        "assets": [
+          "apps/api-rmq/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/api-rmq/src/environments/environment.ts",
+              "with": "apps/api-rmq/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "api-rmq:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/api-rmq/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/api-rmq"
+      ],
+      "options": {
+        "jestConfig": "apps/api-rmq/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

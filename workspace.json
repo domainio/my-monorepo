@@ -3,6 +3,7 @@
   "projects": {
     "api-graphql": "apps/api-graphql",
     "api-nest": "apps/api-nest",
+    "api-rmq": "apps/api-rmq",
     "api-springboot": "apps/api-springboot",
     "api_rust": "apps/api-rust",
     "common": "libs/common",
