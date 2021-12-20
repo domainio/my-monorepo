@@ -2,11 +2,11 @@ import styles from "./app.module.css";
 import NxWelcome from "./nx-welcome";
 import { Item } from "@my-monorepo/common";
 import { Route, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "isomorphic-fetch";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useMutation } from "@apollo/client";
 
-const gqlQuery = gql`
+const gqlGetAllTodos = gql`
   query getAllTodos {
     todos {
       id
@@ -15,17 +15,50 @@ const gqlQuery = gql`
   }
 `;
 
+const gqlCreateTodo = gql`
+  mutation ($name: String!) {
+    createTodo(createTodoInput: { name: $name }) {
+      id
+      name
+    }
+  }
+`;
+
 export function App() {
-  const { loading, error, data } = useQuery<{ todos: Item[] }, Item[]>(
-    gqlQuery
+  const { loading, data: dataAllTodos } = useQuery<{ todos: Item[] }, Item[]>(
+    gqlGetAllTodos
   );
+
+  const [addTodo, { data: dataNewTodo }] = useMutation(gqlCreateTodo);
+  const [todoName, setTodoName] = useState("");
+
+  const createTodo = () => {
+    console.log("todoName", todoName);
+    addTodo({ variables: { name: todoName } });
+  };
+
+  useEffect(() => {
+    console.log("dataNewTodo", dataNewTodo);
+  }, [dataNewTodo]);
+
   return (
     <>
-      <ul>
-        {data?.todos?.map((todo) => (
-          <li>{todo.name}</li>
+      <ul style={{ backgroundColor: "lightgray" }}>
+        <div>All Todo's list:</div>
+        {dataAllTodos?.todos?.map((todo) => (
+          <li key={todo.id}>{todo.name}</li>
         ))}
       </ul>
+      <div style={{ backgroundColor: "lightgray" }}>
+        <div>Add Todo:</div>
+        <input
+          type={"text"}
+          placeholder="type name..."
+          value={todoName}
+          onChange={(e) => setTodoName(e.target.value)}
+        />
+        <button onClick={createTodo}>Create</button>
+      </div>
       <NxWelcome title="web-app" />
       <div />
 
